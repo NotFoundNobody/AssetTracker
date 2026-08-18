@@ -11,7 +11,8 @@ namespace UI
 {
     internal static class Program
     {
-        public static IServiceProvider ServiceProvider { get; set; }
+        public static IServiceProvider? ServiceProvider { get; set; }
+        public static User? UserData { get; set; }
 
         [STAThread]
         static void Main()

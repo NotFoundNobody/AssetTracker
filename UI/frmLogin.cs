@@ -44,7 +44,12 @@ namespace UI
                 }
                 this.Invoke(() =>
                 {
-                    MessageBox.Show(result.Person.FirstName+" "+ result.Person.LastName, "Welcome");
+                   
+                    Program.UserData = result;
+                    this.Hide();
+                    frmMain main = new frmMain();
+                    main.ShowDialog();
+                    this.Close();
                 });
 
             });
