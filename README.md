@@ -16,7 +16,7 @@
 
   <p>
     <a href="#features">Features</a> ·
-    <a href="#screenshots">Screenshots</a> ·
+    <a href="#demo-preview">Screenshots</a> ·
     <a href="#tech-stack">Tech Stack</a> ·
     <a href="#getting-started">Getting Started</a> ·
     <a href="#project-structure">Structure</a>
@@ -186,10 +186,16 @@ The illustrative GIF and PNG previews are stored in `docs/assets/screenshots/`. 
 
 Issues and suggestions are welcome. Before opening a pull request, build the solution and describe the changes and any required configuration updates.
 
-## License
 
-No license has been specified in this repository yet. Add a `LICENSE` file before distributing or reusing the project publicly.
+## 📄 License
 
+This project is licensed under a custom **All Rights Reserved** license.
+
+- ✅ Personal and non-commercial use is permitted.
+- ❌ Commercial use requires prior written permission.
+- ❌ Modification and redistribution are prohibited without prior written permission.
+
+See the [LICENSE](LICENSE) file for the complete terms.
 ---
 
 <div align="center">
