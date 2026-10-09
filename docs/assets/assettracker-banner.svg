@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="44" y1="10" x2="1167" y2="437" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111C35"/>
+      <stop offset="0.55" stop-color="#192D55"/>
+      <stop offset="1" stop-color="#274B92"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7192FF"/>
+      <stop offset="1" stop-color="#4262E7"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#6187FF" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#68E1D2" stop-opacity=".04"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox">
+      <feGaussianBlur stdDeviation="0"/>
+    </filter>
+    <clipPath id="screenClip"><rect x="626" y="59" width="520" height="322" rx="20"/></clipPath>
+  </defs>
+  <rect width="1200" height="440" rx="24" fill="url(#bg)"/>
+  <circle cx="1100" cy="40" r="210" fill="#4A70E8" fill-opacity=".13"/>
+  <circle cx="620" cy="430" r="250" fill="#34BDA8" fill-opacity=".07"/>
+  <path d="M0 360C174 309 269 414 462 355C626 305 772 343 924 279C1055 224 1124 254 1200 221V440H0V360Z" fill="url(#glow)"/>
+
+  <!-- Brand mark -->
+  <rect x="70" y="68" width="46" height="46" rx="14" fill="url(#blue)"/>
+  <path d="M83 82H103V101H83V82Z" stroke="white" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M88 88H98M88 94H98" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="130" y="98" fill="#F8FAFF" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700">AssetTracker</text>
+  <rect x="70" y="145" width="145" height="29" rx="14.5" fill="#7290FF" fill-opacity=".17" stroke="#9AAEFF" stroke-opacity=".32"/>
+  <circle cx="87" cy="159.5" r="4" fill="#64E2C4"/>
+  <text x="100" y="164" fill="#C7D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.4">DESKTOP APP</text>
+  <text x="70" y="223" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Know your assets.</text>
+  <text x="70" y="274" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Own your workflow.</text>
+  <text x="72" y="311" fill="#BDCAE4" font-family="Segoe UI, Arial, sans-serif" font-size="16">People and asset management in one clean workspace.</text>
+  <text x="72" y="337" fill="#BDCAE4" font-family="Segoe UI, Arial, sans-serif" font-size="16">Built with C#, Windows Forms and Entity Framework Core.</text>
+  <rect x="70" y="365" width="124" height="35" rx="10" fill="#F5F7FF"/>
+  <text x="132" y="387" text-anchor="middle" fill="#223B78" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ASSET CONTROL</text>
+  <rect x="205" y="365" width="110" height="35" rx="10" fill="#FFFFFF" fill-opacity=".07" stroke="#A5B8E8" stroke-opacity=".35"/>
+  <text x="260" y="387" text-anchor="middle" fill="#E0E8FF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">PEOPLE</text>
+
+  <!-- Illustrative dashboard window (not a product screenshot) -->
+  <rect x="618" y="51" width="536" height="338" rx="24" fill="#060E20" fill-opacity=".18"/>
+  <g clip-path="url(#screenClip)">
+    <rect x="626" y="59" width="520" height="322" rx="20" fill="#F5F7FB"/>
+    <rect x="626" y="59" width="111" height="322" fill="#17233C"/>
+    <rect x="641" y="75" width="22" height="22" rx="7" fill="url(#blue)"/>
+    <path d="M647 81H657V91H647V81Z" stroke="white" stroke-width="1.2"/>
+    <text x="670" y="89" fill="#F6F8FF" font-family="Segoe UI, Arial, sans-serif" font-size="8.8" font-weight="700">AssetTracker</text>
+    <text x="641" y="125" fill="#91A1C1" font-family="Segoe UI, Arial, sans-serif" font-size="7" font-weight="700" letter-spacing="1">WORKSPACE</text>
+    <rect x="636" y="136" width="91" height="28" rx="7" fill="#2E426A"/>
+    <rect x="636" y="144" width="2.5" height="12" rx="1.25" fill="#6384FF"/>
+    <rect x="645" y="145" width="9" height="9" rx="2" fill="#A8BAFF" fill-opacity=".95"/>
+    <text x="661" y="152" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="700">Overview</text>
+    <text x="661" y="181" fill="#C1CCE0" font-family="Segoe UI, Arial, sans-serif" font-size="8.5">People</text>
+    <text x="661" y="207" fill="#C1CCE0" font-family="Segoe UI, Arial, sans-serif" font-size="8.5">Assets</text>
+    <text x="661" y="233" fill="#C1CCE0" font-family="Segoe UI, Arial, sans-serif" font-size="8.5">Reports</text>
+    <rect x="750" y="75" width="378" height="39" rx="8" fill="#FFFFFF"/>
+    <text x="764" y="92" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Overview</text>
+    <text x="764" y="104" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.8">Your asset operations at a glance</text>
+    <circle cx="1092" cy="94" r="12" fill="#E8EEFF"/>
+    <text x="1092" y="97" text-anchor="middle" fill="#4B69D8" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="700">AD</text>
+    <rect x="750" y="124" width="88" height="58" rx="8" fill="#FFFFFF" stroke="#E5EAF3"/>
+    <rect x="846" y="124" width="88" height="58" rx="8" fill="#FFFFFF" stroke="#E5EAF3"/>
+    <rect x="942" y="124" width="88" height="58" rx="8" fill="#FFFFFF" stroke="#E5EAF3"/>
+    <rect x="1038" y="124" width="90" height="58" rx="8" fill="#FFFFFF" stroke="#E5EAF3"/>
+    <text x="760" y="139" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.8">Total assets</text>
+    <text x="760" y="160" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">1,284</text>
+    <text x="856" y="139" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.8">Assigned</text>
+    <text x="856" y="160" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">936</text>
+    <text x="952" y="139" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.8">Available</text>
+    <text x="952" y="160" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">248</text>
+    <text x="1048" y="139" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.8">People</text>
+    <text x="1048" y="160" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">156</text>
+    <rect x="750" y="192" width="227" height="173" rx="9" fill="#FFFFFF" stroke="#E5EAF3"/>
+    <text x="763" y="210" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700">Assignment activity</text>
+    <text x="763" y="222" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.7">Monthly sample data</text>
+    <path d="M770 330H961M770 300H961M770 270H961M770 240H961" stroke="#E9EDF4" stroke-width="1"/>
+    <rect x="785" y="293" width="16" height="37" rx="3" fill="#8299FF"/>
+    <rect x="812" y="277" width="16" height="53" rx="3" fill="#718BFA"/>
+    <rect x="839" y="286" width="16" height="44" rx="3" fill="#8299FF"/>
+    <rect x="866" y="253" width="16" height="77" rx="3" fill="#617EF0"/>
+    <rect x="893" y="265" width="16" height="65" rx="3" fill="#718BFA"/>
+    <rect x="920" y="238" width="16" height="92" rx="3" fill="#4568E6"/>
+    <text x="785" y="344" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.5">Jan</text>
+    <text x="812" y="344" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.5">Feb</text>
+    <text x="839" y="344" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.5">Mar</text>
+    <text x="866" y="344" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.5">Apr</text>
+    <text x="893" y="344" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.5">May</text>
+    <text x="920" y="344" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="6.5">Jun</text>
+    <rect x="986" y="192" width="142" height="173" rx="9" fill="#FFFFFF" stroke="#E5EAF3"/>
+    <text x="998" y="210" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700">Asset status</text>
+    <circle cx="1038" cy="270" r="36" stroke="#4565E7" stroke-width="13" fill="none"/>
+    <circle cx="1038" cy="270" r="36" stroke="#27B593" stroke-width="13" fill="none" stroke-dasharray="42 184" transform="rotate(-90 1038 270)"/>
+    <circle cx="1038" cy="270" r="36" stroke="#F2A946" stroke-width="13" fill="none" stroke-dasharray="17 209" stroke-dashoffset="-42" transform="rotate(-90 1038 270)"/>
+    <text x="1038" y="273" text-anchor="middle" fill="#263249" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">1,284</text>
+    <circle cx="1000" cy="324" r="3" fill="#4565E7"/><text x="1008" y="327" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="7">Assigned</text>
+    <circle cx="1070" cy="324" r="3" fill="#27B593"/><text x="1078" y="327" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="7">Available</text>
+    <circle cx="1000" cy="342" r="3" fill="#F2A946"/><text x="1008" y="345" fill="#8792A8" font-family="Segoe UI, Arial, sans-serif" font-size="7">Maintenance</text>
+  </g>
+  <rect x="626.5" y="59.5" width="519" height="321" rx="19.5" stroke="#FFFFFF" stroke-opacity=".25"/>
+  <text x="1145" y="414" text-anchor="end" fill="#AFC0E5" font-family="Segoe UI, Arial, sans-serif" font-size="10">Illustrative UI banner · sample metrics</text>
+</svg>
