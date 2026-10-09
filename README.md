@@ -66,40 +66,36 @@
   </tr>
 </table>
 
-## Screenshots
+## Demo Preview
 
-Add screenshots captured from the running application to `docs/assets/screenshots/`. Suggested filenames are listed below. The banner above is an **illustrative graphic**, not a screenshot of the running application.
+The animated walkthrough below illustrates the intended visual style and navigation flow. It is a **designed mockup with sample content**, not a screen recording of the running application; dashboard values and people records are illustrative.
 
-<!--
-After adding the image files, uncomment this gallery.
+<p align="center">
+  <img src="docs/assets/screenshots/demo.gif" alt="AssetTracker illustrative walkthrough: login, dashboard, and people management" width="100%" />
+</p>
 
 <div align="center">
   <table>
     <tr>
       <td align="center" width="50%">
-        <strong>Login</strong><br />
-        <img src="docs/assets/screenshots/login.png" alt="AssetTracker login screen" width="100%" />
+        <strong>Login concept</strong><br />
+        <img src="docs/assets/screenshots/login.png" alt="Illustrative AssetTracker login UI" width="100%" />
       </td>
       <td align="center" width="50%">
-        <strong>Dashboard</strong><br />
-        <img src="docs/assets/screenshots/dashboard.png" alt="AssetTracker dashboard" width="100%" />
+        <strong>Dashboard concept</strong><br />
+        <img src="docs/assets/screenshots/dashboard.png" alt="Illustrative AssetTracker dashboard UI" width="100%" />
       </td>
     </tr>
     <tr>
-      <td align="center" width="50%">
-        <strong>People</strong><br />
-        <img src="docs/assets/screenshots/people.png" alt="People list view" width="100%" />
-      </td>
-      <td align="center" width="50%">
-        <strong>Person details</strong><br />
-        <img src="docs/assets/screenshots/person-form.png" alt="Person details form" width="100%" />
+      <td align="center" colspan="2">
+        <strong>People management concept</strong><br />
+        <img src="docs/assets/screenshots/people.png" alt="Illustrative people list UI" width="100%" />
       </td>
     </tr>
   </table>
 </div>
--->
 
-**To publish the gallery:** take real screenshots of the Login, Dashboard, People list, and person form; save them with the filenames above; then remove the HTML comment markers around the gallery markup.
+> These visuals are design previews created for the README. Replace them with captures from the running WinForms application when you are ready to show the exact implemented UI.
 
 ## Tech Stack
 
@@ -179,17 +175,12 @@ flowchart LR
 - [ ] Implement Assets and Categories views
 - [ ] Add reporting and settings workflows
 - [ ] Add automated tests and application logging
-- [ ] Add real screenshots and a short demo GIF
+- [x] Add illustrative README mockups and an animated preview
+- [ ] Replace mockups with screenshots captured from the running application
 
 ## Demo Assets
 
-Keep repository screenshots in `docs/assets/screenshots/`. For a short walkthrough, a GIF named `demo.gif` can be added here:
-
-```md
-<p align="center">
-  <img src="docs/assets/screenshots/demo.gif" alt="AssetTracker walkthrough" width="90%" />
-</p>
-```
+The illustrative GIF and PNG previews are stored in `docs/assets/screenshots/`. To show the exact application UI instead, capture the running WinForms forms and replace these mockup files with those screenshots.
 
 ## Contributing
 
