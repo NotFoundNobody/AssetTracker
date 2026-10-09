@@ -8,6 +8,7 @@ namespace Services.Interfaces
 {
     public interface IAuthenticationService
     {
+        
         Task<User?> Login(LoginRequest login);
     }
 }

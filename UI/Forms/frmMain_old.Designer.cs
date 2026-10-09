@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class frmMain
+    partial class frmMain_old
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            btnUsersManagment = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain_old));
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             newToolStripMenuItem = new ToolStripMenuItem();
@@ -60,26 +59,18 @@
             searchToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator5 = new ToolStripSeparator();
             aboutToolStripMenuItem = new ToolStripMenuItem();
-            lblUsername = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            splitContainer1 = new SplitContainer();
+            splitter1 = new Splitter();
             button4 = new Button();
-            statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            button3 = new Button();
+            button2 = new Button();
+            btnPersonManagement = new Button();
+            btnUsersManagment = new Button();
             menuStrip1.SuspendLayout();
-            statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnUsersManagment
-            // 
-            btnUsersManagment.Image = Properties.Resources.icons8_management_100;
-            btnUsersManagment.Location = new Point(44, 51);
-            btnUsersManagment.Name = "btnUsersManagment";
-            btnUsersManagment.Size = new Size(124, 91);
-            btnUsersManagment.TabIndex = 0;
-            btnUsersManagment.TabStop = false;
-            btnUsersManagment.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -88,7 +79,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(784, 24);
+            menuStrip1.Size = new Size(1152, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -289,102 +280,142 @@
             aboutToolStripMenuItem.Size = new Size(122, 22);
             aboutToolStripMenuItem.Text = "&About...";
             // 
-            // lblUsername
+            // splitContainer1
             // 
-            lblUsername.Dock = DockStyle.Top;
-            lblUsername.Font = new Font("IRANSansWeb", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(0, 24);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(784, 24);
-            lblUsername.TabIndex = 2;
-            lblUsername.Text = "label1";
-            lblUsername.TextAlign = ContentAlignment.MiddleCenter;
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.FixedPanel = FixedPanel.Panel1;
+            splitContainer1.IsSplitterFixed = true;
+            splitContainer1.Location = new Point(0, 24);
+            splitContainer1.Name = "splitContainer1";
             // 
-            // button1
+            // splitContainer1.Panel1
             // 
-            button1.Image = Properties.Resources.icons8_management_100;
-            button1.Location = new Point(188, 51);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 91);
-            button1.TabIndex = 0;
-            button1.TabStop = false;
-            button1.UseVisualStyleBackColor = true;
+            splitContainer1.Panel1.AutoScroll = true;
+            splitContainer1.Panel1.Controls.Add(splitter1);
+            splitContainer1.Panel1.Controls.Add(button4);
+            splitContainer1.Panel1.Controls.Add(button3);
+            splitContainer1.Panel1.Controls.Add(button2);
+            splitContainer1.Panel1.Controls.Add(btnPersonManagement);
+            splitContainer1.Panel1.Controls.Add(btnUsersManagment);
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
+            splitContainer1.Size = new Size(1152, 678);
+            splitContainer1.SplitterDistance = 200;
+            splitContainer1.SplitterIncrement = 25;
+            splitContainer1.SplitterWidth = 5;
+            splitContainer1.TabIndex = 4;
+            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
-            // button2
+            // splitter1
             // 
-            button2.Image = Properties.Resources.icons8_management_100;
-            button2.Location = new Point(329, 51);
-            button2.Name = "button2";
-            button2.Size = new Size(124, 91);
-            button2.TabIndex = 0;
-            button2.TabStop = false;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Image = Properties.Resources.icons8_management_100;
-            button3.Location = new Point(471, 51);
-            button3.Name = "button3";
-            button3.Size = new Size(124, 91);
-            button3.TabIndex = 0;
-            button3.TabStop = false;
-            button3.UseVisualStyleBackColor = true;
+            splitter1.BackColor = SystemColors.ActiveCaptionText;
+            splitter1.Dock = DockStyle.Right;
+            splitter1.Location = new Point(197, 0);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(3, 678);
+            splitter1.TabIndex = 7;
+            splitter1.TabStop = false;
             // 
             // button4
             // 
-            button4.Image = Properties.Resources.icons8_management_100;
-            button4.Location = new Point(611, 51);
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.Image = Properties.Resources.SettingsIcon;
+            button4.ImageAlign = ContentAlignment.MiddleRight;
+            button4.Location = new Point(11, 463);
             button4.Name = "button4";
-            button4.Size = new Size(124, 91);
-            button4.TabIndex = 0;
+            button4.Size = new Size(183, 106);
+            button4.TabIndex = 6;
             button4.TabStop = false;
+            button4.Text = "Settings";
+            button4.TextAlign = ContentAlignment.MiddleLeft;
+            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
             button4.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
+            // button3
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 539);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.RenderMode = ToolStripRenderMode.Professional;
-            statusStrip1.Size = new Size(784, 22);
-            statusStrip1.TabIndex = 3;
-            statusStrip1.Text = "statusStrip1";
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Image = Properties.Resources.TransactionsIcon;
+            button3.ImageAlign = ContentAlignment.MiddleRight;
+            button3.Location = new Point(11, 351);
+            button3.Name = "button3";
+            button3.Size = new Size(183, 106);
+            button3.TabIndex = 6;
+            button3.TabStop = false;
+            button3.Text = "Transactions";
+            button3.TextAlign = ContentAlignment.MiddleRight;
+            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button3.UseVisualStyleBackColor = true;
             // 
-            // toolStripStatusLabel1
+            // button2
             // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Image = Properties.Resources.Equipmenticon;
+            button2.ImageAlign = ContentAlignment.MiddleRight;
+            button2.Location = new Point(11, 239);
+            button2.Name = "button2";
+            button2.Size = new Size(183, 106);
+            button2.TabIndex = 6;
+            button2.TabStop = false;
+            button2.Text = "Equipments";
+            button2.TextAlign = ContentAlignment.MiddleRight;
+            button2.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // btnPersonManagement
+            // 
+            btnPersonManagement.BackgroundImageLayout = ImageLayout.Stretch;
+            btnPersonManagement.Image = Properties.Resources.icons8_management_100;
+            btnPersonManagement.ImageAlign = ContentAlignment.MiddleRight;
+            btnPersonManagement.Location = new Point(11, 127);
+            btnPersonManagement.Name = "btnPersonManagement";
+            btnPersonManagement.Size = new Size(183, 106);
+            btnPersonManagement.TabIndex = 6;
+            btnPersonManagement.TabStop = false;
+            btnPersonManagement.Text = "Persons";
+            btnPersonManagement.TextAlign = ContentAlignment.MiddleRight;
+            btnPersonManagement.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnPersonManagement.UseVisualStyleBackColor = true;
+            btnPersonManagement.Click += btnPersonManagement_Click;
+            // 
+            // btnUsersManagment
+            // 
+            btnUsersManagment.BackgroundImageLayout = ImageLayout.Stretch;
+            btnUsersManagment.Image = Properties.Resources.dashboardicon;
+            btnUsersManagment.ImageAlign = ContentAlignment.MiddleRight;
+            btnUsersManagment.Location = new Point(11, 15);
+            btnUsersManagment.Name = "btnUsersManagment";
+            btnUsersManagment.Size = new Size(183, 106);
+            btnUsersManagment.TabIndex = 6;
+            btnUsersManagment.TabStop = false;
+            btnUsersManagment.Text = "Dashboard";
+            btnUsersManagment.TextAlign = ContentAlignment.MiddleRight;
+            btnUsersManagment.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnUsersManagment.UseVisualStyleBackColor = true;
+            btnUsersManagment.Click += btnUsersManagment_Click_1;
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 561);
-            Controls.Add(statusStrip1);
-            Controls.Add(lblUsername);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(btnUsersManagment);
+            ClientSize = new Size(1152, 702);
+            Controls.Add(splitContainer1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMain";
             Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button btnUsersManagment;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem;
@@ -415,12 +446,12 @@
         private ToolStripMenuItem searchToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private Label lblUsername;
-        private Button button1;
+        private SplitContainer splitContainer1;
+        private Button btnUsersManagment;
+        private Button btnPersonManagement;
         private Button button2;
         private Button button3;
         private Button button4;
-        private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private Splitter splitter1;
     }
 }

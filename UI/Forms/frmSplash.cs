@@ -1,10 +1,13 @@
 using AssetTracker.Data;
+using Core.Interfaces;
 using Data.Seed;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Services;
 using Services.Interfaces;
+using UI.Forms;
 
 namespace UI
 {
@@ -13,7 +16,11 @@ namespace UI
         public frmSplash()
         {
             InitializeComponent();
-            this.Shown += FrmSplash_Shown;
+            
+                this.Shown += FrmSplash_Shown!;
+
+            
+            
 
         }
         private async void FrmSplash_Shown(object sender, EventArgs e)
@@ -36,9 +43,9 @@ namespace UI
 
                         services.AddDbContext<AppDbContext>(options =>
                             options.UseSqlite(connection));
-
                         services.AddTransient<frmLogin>();
                         services.AddScoped<IAuthenticationService, AuthenticationService>();
+                        services.AddScoped<IPersonService, PersonService>();
                     })
                     .Build();
 
@@ -54,8 +61,7 @@ namespace UI
                 }
             });
 
-            var mainForm = Program.ServiceProvider.GetRequiredService<frmLogin>();
-           // await Task.Delay(4000); 
+            var mainForm = Program.ServiceProvider!.GetRequiredService<frmLogin>();
             this.Hide();
             mainForm.ShowDialog();
             this.Close();

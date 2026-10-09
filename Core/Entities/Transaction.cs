@@ -14,7 +14,7 @@ namespace Core.Entities
         public required Guid EquipmentID { get; set; }    // Foreign Key
         public required Equipment Equipment { get; set; }  // Navigation Property
         public Guid EquipmentStatusID { get; set; }      // Foreign Key
-        public required EquipmentType Status { get; set; }  // Navigation Property
+        public required EquipmentStatus Status { get; set; }  // Navigation Property
         public string? Description { get; set; }
     }
 }

@@ -204,10 +204,16 @@ namespace AssetTracker.Data
             return base.SaveChanges();
         }
 
+        public override Task<int> SaveChangesAsync(
+            CancellationToken cancellationToken = default)
+        {
+            UpdateAuditFields();
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
         private void UpdateAuditFields()
         {
-            var entries = ChangeTracker
-                .Entries<BaseEntity>();
+            var entries = ChangeTracker.Entries<BaseEntity>();
 
             foreach (var entry in entries)
             {
