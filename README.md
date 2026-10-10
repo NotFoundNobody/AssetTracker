@@ -4,13 +4,13 @@
   <h1>AssetTracker</h1>
   <p><strong>A desktop workspace for people and asset management.</strong></p>
   <p>
-    A C# Windows Forms application with a dashboard-style interface, authentication, people management, and an Entity Framework Core data layer.
+    A C# Windows Forms application featuring a dashboard-style interface, authentication, people management, and a local SQLite database.
   </p>
 
   <p>
     <img src="https://img.shields.io/badge/C%23-WinForms-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="C sharp WinForms" />
     <img src="https://img.shields.io/badge/Entity%20Framework-Core-68217A?style=for-the-badge&logo=dotnet&logoColor=white" alt="Entity Framework Core" />
-    <img src="https://img.shields.io/badge/Database-SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
+    <img src="https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
     <img src="https://img.shields.io/badge/Status-In%20Development-F59E0B?style=for-the-badge" alt="In development" />
   </p>
 
@@ -27,7 +27,9 @@
 
 ## Overview
 
-**AssetTracker** is a Windows desktop application designed to bring people records and asset operations into one workspace. The UI uses a modern dashboard layout with a navigation sidebar, metric cards, charts, recent activity, and quick actions.
+**AssetTracker** is a Windows desktop application designed to bring people records and asset operations into one workspace. The interface uses a dashboard layout with a navigation sidebar, metric cards, charts, recent activity, and quick actions.
+
+The application targets **.NET 10 for Windows** and uses a local SQLite database file. Data access is handled by the `Data` class library, while application service methods are organized in `Services`. The WinForms UI calls these services directly; there is no separate API or backend server.
 
 > **Current implementation status:** Authentication and the People view are the primary connected flows. Dashboard metrics and charts currently use sample data, while Assets, Categories, Reports, and Settings are UI placeholders awaiting their service implementations.
 
@@ -36,39 +38,49 @@
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🔐 Authentication</h3>
+      <h3>Authentication</h3>
       Sign in through the authentication service and keep the current user in the in-memory application session.
     </td>
     <td width="50%" valign="top">
-      <h3>👥 People management</h3>
+      <h3>People management</h3>
       A dedicated People view backed by the person service for loading records and supporting person operations.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>📊 Dashboard overview</h3>
+      <h3>Dashboard overview</h3>
       KPI cards, a monthly activity bar chart, an asset-status donut chart, recent activity, and quick actions.
     </td>
     <td width="50%" valign="top">
-      <h3>🧭 Workspace navigation</h3>
+      <h3>Workspace navigation</h3>
       A sidebar with active-page styling and a shared content area for switching views.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>👤 User context</h3>
+      <h3>User context</h3>
       The signed-in user's available name and role fields are displayed in the dashboard header.
     </td>
     <td width="50%" valign="top">
-      <h3>🚪 Sign out</h3>
+      <h3>Sign out</h3>
       Clear the in-memory user reference and return to the login flow.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Local database</h3>
+      Store application data in a SQLite database file on the local machine without requiring a separate database server.
+    </td>
+    <td width="50%" valign="top">
+      <h3>Service-based architecture</h3>
+      Separate UI, core models, data access, and application services into dedicated projects.
     </td>
   </tr>
 </table>
 
 ## Demo Preview
 
-The animated walkthrough below illustrates the intended visual style and navigation flow. It is a **designed mockup with sample content**, not a screen recording of the running application; dashboard values and people records are illustrative.
+The animated walkthrough below illustrates the intended visual style and navigation flow. It is a **designed mockup with sample content**, not a screen recording of the running application. Dashboard values and people records are illustrative.
 
 <p align="center">
   <img src="docs/assets/screenshots/demo.gif" alt="AssetTracker illustrative walkthrough: login, dashboard, and people management" width="100%" />
@@ -102,11 +114,35 @@ The animated walkthrough below illustrates the intended visual style and navigat
 | Layer | Technology |
 |---|---|
 | Desktop UI | C# / Windows Forms |
+| Target framework | .NET 10 for Windows |
+| Core models and contracts | `Core` class library |
+| Data access | `Data` class library, Entity Framework Core |
+| Database | SQLite (local database file) |
+| Application services | `Services` class library |
 | Dependency injection | `Microsoft.Extensions.DependencyInjection` |
-| Data access | Entity Framework Core |
-| Database | SQL Server (configured by the application) |
-| Application code | Core models, DTOs, interfaces, and service classes |
+| Application hosting | `Microsoft.Extensions.Hosting` |
 | Charts | Custom GDI+ drawing in WinForms; no chart package required for the current dashboard |
+
+## Architecture
+
+AssetTracker is a local desktop application. The UI uses application services, which rely on the data-access layer and Entity Framework Core to work with SQLite.
+
+```mermaid
+flowchart TD
+    UI[Windows Forms UI] --> Services[Services]
+    Services --> Core[Core models and contracts]
+    Services --> Data[Data access]
+    Data --> EF[Entity Framework Core]
+    EF --> SQLite[(Local SQLite database file)]
+```
+
+- **UI:** Windows Forms screens, navigation, and user interactions.
+- **Core:** Shared application models and contracts.
+- **Services:** Application operations called by the UI.
+- **Data:** Database context and data-access implementation.
+- **SQLite:** Stores application data in a local file.
+
+No separate API, backend server, or SQL Server installation is required.
 
 ## Getting Started
 
@@ -114,56 +150,76 @@ The animated walkthrough below illustrates the intended visual style and navigat
 
 - Windows
 - Visual Studio with the **.NET desktop development** workload
-- The .NET SDK/runtime targeted by the solution
-- SQL Server if you want to run the database-backed flows
+- .NET 10 SDK
+
+A separate database server is not required because SQLite stores data in a local file.
 
 ### Run locally
 
 1. Clone the repository:
 
    ```bash
-   git clone NotFoundNobody/AssetTracker
-   cd NotFoundNobody/AssetTracker
+   git clone https://github.com/NotFoundNobody/AssetTracker.git
+   cd AssetTracker
    ```
 
-2. Open the solution (`.sln`) in Visual Studio.
-3. Configure the database connection string used by `AppDbContext` and confirm the database schema or migrations are ready.
-4. Verify that the application's dependency-injection setup registers the data context and service implementations.
-5. Set the WinForms UI project as the startup project.
+2. Open `AssetTracker.sln` in Visual Studio.
+3. Restore NuGet packages.
+4. Check `UI/appsettings.json` and verify the SQLite connection string:
+
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Data Source=Database/assettracker.db;"
+     }
+   }
+   ```
+
+5. Set `UI` as the startup project.
 6. Build and run the solution.
 
-> Configuration keys and the exact migration commands depend on the solution's current setup. Do not commit real database credentials, access tokens, or production secrets to source control.
+> The configured database path is relative: `Database/assettracker.db`. Ensure the application's working directory and database initialization logic are consistent with this path. Whether the database and schema are created automatically depends on the initialization code.
+
+## Local Database
+
+AssetTracker uses SQLite through Entity Framework Core.
+
+- The configured database file is `Database/assettracker.db`.
+- The database runs locally; no database server needs to be installed or managed.
+- The `Data` project references `Microsoft.EntityFrameworkCore.Sqlite`.
+- Avoid committing real user data or a populated local database file to source control.
 
 ## Project Structure
 
-The solution is organized around UI, service, core-contract, and data-access responsibilities. Adjust the tree below if the repository uses different folder names.
+The solution contains four application projects and a `test` project:
 
 ```text
 AssetTracker/
 ├── Core/
-│   ├── DTO/
-│   ├── Entities/
-│   ├── Interfaces/
-│   └── Models/
-├── AssetTracker.Data/
-│   └── AppDbContext.cs
+│   └── Core.csproj
+├── Data/
+│   └── Data.csproj
 ├── Services/
-│   ├── Interfaces/
-│   └── Service implementations
-└── UI/
-    ├── Forms/
-    └── Views/
+│   └── Services.csproj
+├── UI/
+│   ├── UI.csproj
+│   ├── appsettings.json
+│   └── Database/
+├── test/
+├── docs/
+│   └── assets/
+├── AssetTracker.sln
+├── LICENSE
+└── README.md
 ```
 
-### High-level flow
+Project responsibilities:
 
-```mermaid
-flowchart LR
-    UI[WinForms UI] --> Services[Services]
-    Services --> Core[Core contracts and models]
-    Services --> Data[Entity Framework Core]
-    Data --> DB[(SQL Server)]
-```
+- `Core`: Shared models and application contracts.
+- `Data`: Entity Framework Core and SQLite data access.
+- `Services`: Application service implementations and references to `Core` and `Data`.
+- `UI`: Windows Forms desktop application and dependency-injection setup.
+- `test`: Additional project in the solution.
 
 ## Roadmap
 
@@ -186,16 +242,16 @@ The illustrative GIF and PNG previews are stored in `docs/assets/screenshots/`. 
 
 Issues and suggestions are welcome. Before opening a pull request, build the solution and describe the changes and any required configuration updates.
 
-
-## 📄 License
+## License
 
 This project is licensed under a custom **All Rights Reserved** license.
 
-- ✅ Personal and non-commercial use is permitted.
-- ❌ Commercial use requires prior written permission.
-- ❌ Modification and redistribution are prohibited without prior written permission.
+- Personal and non-commercial use is permitted.
+- Commercial use requires prior written permission.
+- Modification and redistribution are prohibited without prior written permission.
 
 See the [LICENSE](LICENSE) file for the complete terms.
+
 ---
 
 <div align="center">
