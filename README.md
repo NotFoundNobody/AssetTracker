@@ -122,8 +122,8 @@ The animated walkthrough below illustrates the intended visual style and navigat
 1. Clone the repository:
 
    ```bash
-   git clone <YOUR_REPOSITORY_URL>
-   cd <YOUR_REPOSITORY_FOLDER>
+   git clone NotFoundNobody/AssetTracker
+   cd NotFoundNobody/AssetTracker
    ```
 
 2. Open the solution (`.sln`) in Visual Studio.
